@@ -1,0 +1,50 @@
+{
+  "name": "helloworld-temporal",
+  "version": "1.0.0",
+  "description": "A simple example of temporal workflow",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint --fix 'src/**/*.ts'",
+    "build:hello-world": "tsc --project src/hello-world",
+    "start:hello-world": "node dist/hello-world/worker.js",
+    "start:hello-world:workflow": "node dist/hello-world/client.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indrabasak/helloworld-temporal.git"
+  },
+  "keywords": [
+    "temporal",
+    "typescript"
+  ],
+  "author": "Indra Basak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indrabasak/helloworld-temporal/issues"
+  },
+  "homepage": "https://github.com/indrabasak/helloworld-temporal#readme",
+  "dependencies": {
+    "@temporalio/activity": "^1.15.0",
+    "@temporalio/client": "^1.15.0",
+    "@temporalio/worker": "^1.15.0",
+    "@temporalio/workflow": "^1.15.0",
+    "nanoid": "^5.1.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tsconfig/node22": "^22.0.5",
+    "@types/ms": "^2.1.0",
+    "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.2",
+    "@typescript-eslint/parser": "^8.57.2",
+    "eslint": "^10.1.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.57.2"
+  }
+}
