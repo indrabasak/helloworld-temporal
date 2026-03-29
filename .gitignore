@@ -211,3 +211,14 @@ dist
 
 !/indra_temporal.db
 !/yarn.lock
+/yarn.lock
+/indra_temporal.db
+/.idea/$PROJECT_FILE$
+/.idea/.gitignore
+/.idea/checkstyle-idea.xml
+/.idea/copilot.data.migration.ask2agent.xml
+/.idea/helloworld-temporal.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/qaplug_profiles.xml
+/.idea/vcs.xml
