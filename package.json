@@ -7,7 +7,10 @@
     "lint:fix": "eslint --fix 'src/**/*.ts'",
     "build:hello-world": "tsc --project src/hello-world",
     "start:hello-world": "node dist/hello-world/worker.js",
-    "start:hello-world:workflow": "node dist/hello-world/client.js"
+    "start:hello-world:workflow": "node dist/hello-world/client.js",
+    "build:dependency-injection": "tsc --project src/activities-dependency-injection",
+    "start:dependency-injection": "node dist/activities-dependency-injection/worker.js",
+    "start:dependency-injection:workflow": "node dist/activities-dependency-injection/client.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,7 @@
   "dependencies": {
     "@temporalio/activity": "^1.15.0",
     "@temporalio/client": "^1.15.0",
+    "@temporalio/envconfig": "^1.15.0",
     "@temporalio/worker": "^1.15.0",
     "@temporalio/workflow": "^1.15.0",
     "nanoid": "^5.1.7"
