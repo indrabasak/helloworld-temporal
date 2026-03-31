@@ -2,7 +2,6 @@
   "name": "helloworld-temporal",
   "version": "1.0.0",
   "description": "A simple example of temporal workflow",
-  "type": "module",
   "scripts": {
     "lint": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint --fix 'src/**/*.ts'",
@@ -11,7 +10,10 @@
     "start:hello-world:workflow": "node dist/hello-world/client.js",
     "build:dependency-injection": "tsc --project src/activities-dependency-injection",
     "start:dependency-injection": "node dist/activities-dependency-injection/worker.js",
-    "start:dependency-injection:workflow": "node dist/activities-dependency-injection/client.js"
+    "start:dependency-injection:workflow": "node dist/activities-dependency-injection/client.js",
+    "build:child-workflows": "tsc --project src/child-workflows",
+    "start:child-workflows": "node dist/child-workflows/worker.js",
+    "start:child-workflows:workflow": "node dist/child-workflows/client.js"
   },
   "repository": {
     "type": "git",

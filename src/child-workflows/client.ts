@@ -1,0 +1,24 @@
+import { Client, Connection } from '@temporalio/client';
+import { loadClientConnectConfig } from '@temporalio/envconfig';
+import { parentWorkflow } from './workflows';
+
+async function run() {
+  const config = loadClientConnectConfig();
+  const connection = await Connection.connect(config.connectionOptions);
+  const client = new Client({ connection });
+
+  const result = await client.workflow.execute(parentWorkflow, {
+    taskQueue: 'child-workflows',
+    workflowId: 'parent-sample-0',
+    args: ['Alice', 'Bob', 'Charlie'],
+  });
+  console.log(result);
+  // I am a child named Alice
+  // I am a child named Bob
+  // I am a child named Charlie
+}
+
+run().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
