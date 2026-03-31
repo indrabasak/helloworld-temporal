@@ -1,25 +1,25 @@
-import {Worker} from '@temporalio/worker';
+import { Worker } from '@temporalio/worker';
 
-import {createActivities} from './activities';
+import { createActivities } from './activities';
 
 async function run() {
-    // Mock DB connection initialization in Worker
-    const db = {
-        async get(_key: string) {
-            return 'Temporal';
-        },
-    };
+  // Mock DB connection initialization in Worker
+  const db = {
+    async get(_key: string) {
+      return 'Temporal';
+    },
+  };
 
-    const worker = await Worker.create({
-        taskQueue: 'dependency-injection',
-        workflowsPath: require.resolve('./workflows'),
-        activities: createActivities(db),
-    });
+  const worker = await Worker.create({
+    taskQueue: 'dependency-injection',
+    workflowsPath: require.resolve('./workflows'),
+    activities: createActivities(db),
+  });
 
-    await worker.run();
+  await worker.run();
 }
 
 run().catch((err) => {
-    console.error(err);
-    process.exit(1);
+  console.error(err);
+  process.exit(1);
 });

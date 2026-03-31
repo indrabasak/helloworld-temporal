@@ -2,6 +2,7 @@
   "name": "helloworld-temporal",
   "version": "1.0.0",
   "description": "A simple example of temporal workflow",
+  "type": "module",
   "scripts": {
     "lint": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint --fix 'src/**/*.ts'",
